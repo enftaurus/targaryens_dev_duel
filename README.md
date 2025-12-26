@@ -4,7 +4,7 @@ This repository contains a Python (FastAPI) backend and a Node.js (React + Vite)
 Both services must be run locally in **separate terminals**.
 
 REFER THE DEMO VIDEO FOR SETUP GUIDE 
-AS
+AS DATABASE SETUP IS A BIT DIFFICULT WE PROVIDED THE .env file in the GOOGLE DRIVE 
 MAKE SURE TO REPLACE THE .env.example inside backend and change name to .env
 
 ## Prerequisites
@@ -12,7 +12,9 @@ MAKE SURE TO REPLACE THE .env.example inside backend and change name to .env
 Ensure the following are installed on your system:
 
 - Python 3.10 or higher
+  
 - Node.js 18 or higher
+  
 - npm 9 or higher
 
 Verify installations:
