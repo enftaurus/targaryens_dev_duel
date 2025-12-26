@@ -7,6 +7,68 @@ Since the frontend and backend run independently, you will need to keep **two se
 **Note:** For a visual walkthrough, please refer to the demo video provided with the submission.
 
 ---
+## Tech Stack
+
+Student Sanctuary is built using a modern, reliable tech stack focused on simplicity, scalability, and real-world feasibility.
+
+### Backend
+
+- **Python** – Core backend language used for logic and API development
+
+- **FastAPI** – Backend framework used to build REST APIs with high performance and clear structure
+
+- **Uvicorn** – ASGI server used to run the FastAPI application
+
+- **Supabase (PostgreSQL)** – Database used for storing student data, appointments, and counsellor notes
+
+- **SQL** – Used for structured data storage and querying
+
+- **Python Dotenv** – For managing environment variables securely
+
+### Frontend
+
+- **React** – Used to build a responsive and component-based user interface
+
+- **Vite** – Frontend build tool used for fast development and optimized builds
+
+- **JavaScript (ES6+)** – Core frontend scripting language
+
+- **HTML & CSS** – For layout, styling, and responsive design
+
+### Authentication & Access Control
+
+- **Role-based access control** – Separate access flows for students and counsellors
+
+- **Session-based authentication** – Ensures secure user access within the application
+
+### APIs & Integrations
+
+- **Gemini API** – Used for the in-app FAQ and application assistance chatbot
+
+  - The chatbot supports navigation and usage queries only
+
+  - It does not provide medical or mental health advice
+
+### Development & Tooling
+
+- **Git & GitHub** – Version control and collaboration
+
+- **npm** – Dependency management for frontend
+
+- **pip** – Dependency management for backend
+
+- **Virtual Environments (venv)** – Isolated Python environment for backend dependencies
+
+### Design Principles
+
+- No AI/ML used for assessments or decision-making
+
+- Rule-based logic for screening and scoring
+
+- Privacy-first system design
+
+- Real-world feasibility over experimental features
+
 
 ## Prerequisites
 
