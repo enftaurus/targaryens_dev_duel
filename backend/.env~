@@ -1,0 +1,8 @@
+GOOGLE_API_KEY="AIzaSyAenj6wYHG94WlKwvaw0VZ53O5fwLlWyIg"
+MAIL_USERNAME=b7074019@gmail.com
+MAIL_PASSWORD=daim yjih etka ajyg  # your app password (no spaces)
+MAIL_FROM=b7074019@gmail.com
+MAIL_SERVER=smtp.gmail.com
+MAIL_PORT=587
+SUPABASE_URL="https://sdbeqzvabcggpkmicvlk.supabase.co"
+SUPABASE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkYmVxenZhYmNnZ3BrbWljdmxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI1MTIyNTEsImV4cCI6MjA3ODA4ODI1MX0.DKLdi08X28AL1bMJ4qXHh0Jb6uHcTZ6z2WSnKnrHaPU"

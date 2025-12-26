@@ -1,0 +1,1187 @@
+/* =======================================================================
+   COUNSELLOR DASHBOARD - Healthcare Theme
+   Calm, professional, accessible design for healthcare professionals
+======================================================================= */
+
+/* Color Palette - Calm Healthcare Colors */
+:root {
+  --healthcare-bg: #f5f7fa;
+  --healthcare-surface: #ffffff;
+  --healthcare-primary: #4a90e2;
+  --healthcare-primary-hover: #357abd;
+  --healthcare-primary-light: #e8f2fc;
+  --healthcare-secondary: #5cb85c;
+  --healthcare-text: #2c3e50;
+  --healthcare-text-light: #5a6c7d;
+  --healthcare-border: #d1d9e0;
+  --healthcare-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+  --healthcare-shadow-hover: 0 4px 16px rgba(44, 62, 80, 0.12);
+  --healthcare-accent: #7fb3d3;
+  --healthcare-success: #5cb85c;
+  --healthcare-error: #d9534f;
+}
+
+/* Base Container */
+.counsellor-container {
+  min-height: 100vh;
+  background-color: var(--healthcare-bg);
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Loading State */
+.counsellor-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  color: var(--healthcare-text-light);
+}
+
+.counsellor-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--healthcare-border);
+  border-top-color: var(--healthcare-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.counsellor-loading p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--healthcare-text-light);
+}
+
+.counsellor-loading-full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.counsellor-loading-full p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: var(--healthcare-text-light);
+}
+
+.counsellor-error-card {
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--healthcare-shadow);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid rgba(217, 83, 79, 0.2);
+  margin-bottom: 2rem;
+}
+
+.counsellor-error-icon-small {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.counsellor-error-title-small {
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.counsellor-error-text-small {
+  color: var(--healthcare-text-light);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.counsellor-summary-content-text {
+  color: var(--healthcare-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Mental Health Data Grid */
+.counsellor-health-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.counsellor-health-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--healthcare-bg);
+  border-radius: 8px;
+  border: 1px solid var(--healthcare-border);
+}
+
+.counsellor-health-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--healthcare-text-light);
+  text-transform: capitalize;
+}
+
+.counsellor-health-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+}
+
+.counsellor-stressed {
+  color: var(--healthcare-error);
+}
+
+.counsellor-not-stressed {
+  color: var(--healthcare-success);
+}
+
+/* Header */
+.counsellor-header {
+  margin-bottom: 2rem;
+}
+
+.counsellor-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.counsellor-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counsellor-user-info {
+  font-size: 1rem;
+  color: var(--healthcare-text-light);
+  padding: 0.5rem 1rem;
+  background-color: var(--healthcare-surface);
+  border-radius: 8px;
+  border: 1px solid var(--healthcare-border);
+}
+
+.counsellor-page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.counsellor-page-subtitle {
+  font-size: 1.125rem;
+  color: var(--healthcare-text-light);
+  margin: 0;
+}
+
+/* Login Page */
+.counsellor-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f2fc 0%, #f5f7fa 100%);
+  padding: 2rem;
+}
+
+.counsellor-login-card {
+  background: var(--healthcare-surface);
+  border-radius: 16px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--healthcare-shadow-hover);
+}
+
+.counsellor-login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.counsellor-login-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.counsellor-login-subtitle {
+  font-size: 1rem;
+  color: var(--healthcare-text-light);
+  margin: 0;
+}
+
+.counsellor-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Elements */
+.counsellor-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.counsellor-form-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--healthcare-text);
+}
+
+.counsellor-form-input {
+  font-size: 1.125rem;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--healthcare-border);
+  border-radius: 8px;
+  background-color: var(--healthcare-surface);
+  color: var(--healthcare-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.counsellor-form-input:focus {
+  outline: none;
+  border-color: var(--healthcare-primary);
+  box-shadow: 0 0 0 3px var(--healthcare-primary-light);
+}
+
+.counsellor-form-input::placeholder {
+  color: #a0aec0;
+}
+
+/* Buttons */
+.counsellor-btn {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.counsellor-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.counsellor-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.counsellor-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.counsellor-btn-primary {
+  background-color: var(--healthcare-primary);
+  color: white;
+}
+
+.counsellor-btn-primary:not(:disabled):hover {
+  background-color: var(--healthcare-primary-hover);
+  box-shadow: var(--healthcare-shadow);
+}
+
+.counsellor-btn-secondary {
+  background-color: var(--healthcare-surface);
+  color: var(--healthcare-text);
+  border: 2px solid var(--healthcare-border);
+}
+
+.counsellor-btn-secondary:not(:disabled):hover {
+  background-color: var(--healthcare-bg);
+  border-color: var(--healthcare-primary);
+}
+
+.counsellor-btn-link {
+  background: none;
+  color: var(--healthcare-primary);
+  padding: 0.5rem 0;
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.counsellor-btn-link:hover {
+  text-decoration: underline;
+}
+
+.counsellor-btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* Main Content */
+.counsellor-main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.counsellor-empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  box-shadow: var(--healthcare-shadow);
+}
+
+.counsellor-empty-text {
+  font-size: 1.125rem;
+  color: var(--healthcare-text-light);
+  margin: 0;
+}
+
+/* Appointments Grid */
+.counsellor-appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.counsellor-appointment-card {
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--healthcare-shadow);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.counsellor-appointment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--healthcare-shadow-hover);
+  border-color: var(--healthcare-primary-light);
+}
+
+.counsellor-card-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--healthcare-border);
+}
+
+.counsellor-card-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0;
+}
+
+.counsellor-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.counsellor-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.counsellor-card-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--healthcare-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.counsellor-card-value {
+  font-size: 1rem;
+  color: var(--healthcare-text);
+}
+
+.counsellor-time-highlight {
+  font-weight: 600;
+  color: var(--healthcare-primary);
+  font-size: 1.0625rem;
+}
+
+/* Profile Layout */
+.counsellor-profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .counsellor-profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Cards */
+.counsellor-section-card {
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--healthcare-shadow);
+}
+
+.counsellor-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--healthcare-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Student Info Grid */
+.counsellor-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.counsellor-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--healthcare-border);
+}
+
+.counsellor-info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.counsellor-info-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--healthcare-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.counsellor-info-value {
+  font-size: 1.125rem;
+  color: var(--healthcare-text);
+}
+
+/* Summary Content */
+.counsellor-summary-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--healthcare-text);
+}
+
+.counsellor-summary-content p {
+  margin: 0;
+}
+
+/* Notes Section */
+.counsellor-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.counsellor-notes-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.counsellor-notes-list::-webkit-scrollbar-track {
+  background: var(--healthcare-bg);
+  border-radius: 4px;
+}
+
+.counsellor-notes-list::-webkit-scrollbar-thumb {
+  background: var(--healthcare-border);
+  border-radius: 4px;
+}
+
+.counsellor-notes-list::-webkit-scrollbar-thumb:hover {
+  background: var(--healthcare-text-light);
+}
+
+.counsellor-empty-notes {
+  text-align: center;
+  padding: 2rem;
+  color: var(--healthcare-text-light);
+  font-style: italic;
+}
+
+/* Note Card */
+.counsellor-note-card {
+  background-color: var(--healthcare-bg);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border-left: 4px solid var(--healthcare-primary);
+}
+
+.counsellor-note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.counsellor-note-author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+}
+
+.counsellor-note-date {
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+}
+
+.counsellor-note-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--healthcare-text);
+  white-space: pre-wrap;
+}
+
+/* Add Note Section */
+.counsellor-add-note-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--healthcare-border);
+}
+
+.counsellor-add-note-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 1rem 0;
+}
+
+.counsellor-note-textarea {
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1rem;
+  border: 2px solid var(--healthcare-border);
+  border-radius: 8px;
+  background-color: var(--healthcare-surface);
+  color: var(--healthcare-text);
+  line-height: 1.7;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 1rem;
+}
+
+.counsellor-note-textarea:focus {
+  outline: none;
+  border-color: var(--healthcare-primary);
+  box-shadow: 0 0 0 3px var(--healthcare-primary-light);
+}
+
+.counsellor-note-textarea::placeholder {
+  color: #a0aec0;
+}
+
+/* Dashboard Header */
+.counsellor-dashboard-header {
+  background-color: var(--healthcare-surface);
+  border-bottom: 1px solid var(--healthcare-border);
+  padding: 1.5rem 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+}
+
+.counsellor-header-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counsellor-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.counsellor-header-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: var(--healthcare-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.counsellor-icon-heart {
+  font-size: 1.25rem;
+}
+
+.counsellor-dashboard-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0;
+}
+
+.counsellor-dashboard-subtitle {
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+  margin: 0.25rem 0 0 0;
+}
+
+.counsellor-dashboard-main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.counsellor-date-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.counsellor-icon-calendar {
+  font-size: 1.5rem;
+}
+
+.counsellor-date-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0;
+}
+
+.counsellor-date-subtitle {
+  font-size: 1rem;
+  color: var(--healthcare-text-light);
+  margin: 0.25rem 0 0 0;
+}
+
+/* New Appointments Grid */
+.counsellor-appointments-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.counsellor-appointment-card-new {
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--healthcare-shadow);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.counsellor-appointment-card-new:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--healthcare-shadow-hover);
+  border-color: var(--healthcare-primary-light);
+}
+
+.counsellor-time-badge-container {
+  margin-bottom: 1rem;
+}
+
+.counsellor-time-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  background-color: var(--healthcare-primary-light);
+  color: var(--healthcare-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.counsellor-icon-clock {
+  font-size: 1rem;
+}
+
+.counsellor-time-text {
+  font-weight: 500;
+}
+
+.counsellor-card-student-info {
+  margin-bottom: 1rem;
+}
+
+.counsellor-student-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--healthcare-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.counsellor-icon-user {
+  font-size: 1.25rem;
+}
+
+.counsellor-student-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.counsellor-student-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0;
+}
+
+.counsellor-student-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.counsellor-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--healthcare-text-light);
+  font-size: 0.875rem;
+}
+
+.counsellor-icon-mail,
+.counsellor-icon-phone {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.counsellor-meta-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.counsellor-card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--healthcare-border);
+}
+
+.counsellor-view-profile {
+  font-size: 0.875rem;
+  color: var(--healthcare-primary);
+  font-weight: 500;
+}
+
+/* Profile Header */
+.counsellor-profile-header {
+  background-color: var(--healthcare-surface);
+  border-bottom: 1px solid var(--healthcare-border);
+  padding: 1.5rem 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+}
+
+.counsellor-profile-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0;
+}
+
+.counsellor-profile-main {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.counsellor-profile-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 2rem;
+}
+
+.counsellor-profile-left-column,
+.counsellor-profile-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Student Profile Card */
+.counsellor-student-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.counsellor-profile-avatar-large {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--healthcare-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.counsellor-icon-user-large {
+  font-size: 2rem;
+}
+
+.counsellor-student-name-large {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.counsellor-student-email-large {
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+  margin: 0;
+}
+
+.counsellor-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.counsellor-info-item-new {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: var(--healthcare-bg);
+}
+
+.counsellor-info-label-new {
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+  margin: 0 0 0.25rem 0;
+  display: block;
+}
+
+.counsellor-info-value-new {
+  font-size: 1rem;
+  color: var(--healthcare-text);
+  margin: 0;
+  display: block;
+}
+
+.counsellor-icon-mail,
+.counsellor-icon-calendar,
+.counsellor-icon-user,
+.counsellor-icon-graduation,
+.counsellor-icon-building {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.counsellor-icon-graduation {
+  font-size: 1.25rem;
+}
+
+.counsellor-icon-building {
+  font-size: 1.25rem;
+}
+
+/* Notes Section Updates */
+.counsellor-notes-description {
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+  margin: 0 0 1rem 0;
+}
+
+.counsellor-note-textarea-large {
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1rem;
+  border: 2px solid var(--healthcare-border);
+  border-radius: 8px;
+  background-color: var(--healthcare-surface);
+  color: var(--healthcare-text);
+  line-height: 1.7;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 1rem;
+  min-height: 150px;
+}
+
+.counsellor-note-textarea-large:focus {
+  outline: none;
+  border-color: var(--healthcare-primary);
+  box-shadow: 0 0 0 3px var(--healthcare-primary-light);
+}
+
+.counsellor-note-submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.counsellor-notes-loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.counsellor-spinner-small {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--healthcare-border);
+  border-top-color: var(--healthcare-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+.counsellor-notes-empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 2px dashed var(--healthcare-border);
+  border-radius: 8px;
+}
+
+.counsellor-icon-file-large {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.counsellor-notes-list-new {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.counsellor-note-card-new {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--healthcare-bg);
+  border: 1px solid var(--healthcare-border);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.counsellor-note-header-new {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.counsellor-note-author-new {
+  font-weight: 500;
+  color: var(--healthcare-text);
+  font-size: 0.875rem;
+}
+
+.counsellor-note-date-new {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--healthcare-text-light);
+}
+
+.counsellor-icon-clock-small {
+  font-size: 0.875rem;
+}
+
+.counsellor-note-content-new {
+  color: var(--healthcare-text);
+  line-height: 1.7;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* Error State */
+.counsellor-error-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--healthcare-surface);
+  border-radius: 12px;
+  box-shadow: var(--healthcare-shadow);
+  max-width: 500px;
+  margin: 4rem auto;
+}
+
+.counsellor-error-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.counsellor-error-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--healthcare-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.counsellor-error-text {
+  font-size: 1rem;
+  color: var(--healthcare-text-light);
+  margin: 0 0 2rem 0;
+}
+
+/* Button Updates */
+.counsellor-btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--healthcare-border);
+  color: var(--healthcare-text);
+}
+
+.counsellor-btn-outline:hover {
+  background-color: var(--healthcare-bg);
+  border-color: var(--healthcare-primary);
+}
+
+.counsellor-btn-ghost {
+  background-color: transparent;
+  border: none;
+  color: var(--healthcare-text);
+  padding: 0.5rem 1rem;
+}
+
+.counsellor-btn-ghost:hover {
+  background-color: var(--healthcare-bg);
+}
+
+.counsellor-btn-success {
+  background-color: var(--healthcare-success);
+  color: white;
+}
+
+.counsellor-btn-success:hover:not(:disabled) {
+  background-color: #4a9e4a;
+}
+
+.counsellor-icon-file {
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .counsellor-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .counsellor-container {
+    padding: 1rem;
+  }
+
+  .counsellor-dashboard-header,
+  .counsellor-profile-header {
+    padding: 1rem;
+    margin: -1rem -1rem 1rem -1rem;
+  }
+
+  .counsellor-page-title {
+    font-size: 1.5rem;
+  }
+
+  .counsellor-page-subtitle {
+    font-size: 1rem;
+  }
+
+  .counsellor-login-card {
+    padding: 2rem;
+  }
+
+  .counsellor-appointments-grid,
+  .counsellor-appointments-grid-new {
+    grid-template-columns: 1fr;
+  }
+
+  .counsellor-header-content {
+    flex-direction: column;
+  }
+
+  .counsellor-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .counsellor-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .counsellor-date-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.counsellor-btn:focus-visible,
+.counsellor-form-input:focus-visible,
+.counsellor-note-textarea:focus-visible {
+  outline: 3px solid var(--healthcare-primary);
+  outline-offset: 2px;
+}
+
