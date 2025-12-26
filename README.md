@@ -1,82 +1,140 @@
-# Student Sanctuary – Local Development Setup
+# Student Sanctuary – Local Development Guide
 
-This repository contains a Python (FastAPI) backend and a Node.js (React + Vite) frontend.  
-Both services must be run locally in **separate terminals**.
+Welcome to **Student Sanctuary**. This repository contains the source code for a mental health support platform built with a **Python (FastAPI) backend** and a **Node.js (React + Vite) frontend**.
 
-REFER THE DEMO VIDEO FOR SETUP GUIDE 
-AS DATABASE SETUP IS A BIT DIFFICULT WE PROVIDED THE .env file in the GOOGLE DRIVE 
-MAKE SURE TO REPLACE THE .env.example inside backend and change name to .env
+Since the frontend and backend run independently, you will need to keep **two separate terminals open** while running the application locally.
+
+**Note:** For a visual walkthrough, please refer to the demo video provided with the submission.
+
+---
 
 ## Prerequisites
 
-Ensure the following are installed on your system:
+Before you begin, ensure your system meets the following requirements:
 
-- Python 3.10 or higher
-  
-- Node.js 18 or higher
-  
-- npm 9 or higher
+- Python version 3.10 or higher  
+- Node.js version 18 or higher  
+- npm version 9 or higher  
 
-Verify installations:
+Verify your installed versions using the following commands:
+
 
 python --version
-pip --version
-node --version
-npm --version'
 
- CLONE THE REPOSITORY
+pip --version
+
+node --version
+
+npm --version
+
+Installation and Setup
+
+1. Clone the Repository
+
+Start by cloning the project to your local machine:
+
 git clone https://github.com/enftaurus/targaryens_dev_duel.git
+
 cd targaryens_dev_duel
 
-BACKEND SETUP
+Backend Setup (Terminal 1)
+
+Open your first terminal window and navigate to the backend directory.
+
 cd backend
-NOW REPLACE THE .env.example with .env from drive link and change the name to .env ensure the name is .env
+
+Configure Environment Variables
+
+A pre-configured .env file is provided through a Google Drive link to simplify database setup.
+
+Steps:
+
+Download the .env file from the provided drive link.
+
+Replace the existing .env.example file in the backend folder.
+
+Rename the file to exactly .env.
+
+Install Dependencies and Run the Backend
+
 pip install -r requirements.txt
+
 uvicorn server:app --reload
-backend will start running on http://localhost:8000
-MAKE SURE IT RUNS ON PORT 8000 AS IT IS CONFIGURED FOR 8000 ONLY RUNNING ON OTHER PORT WILL BRING CORS ISSUE 
 
-FRONTEND SETUP ==>> ENSURE THAT BOTH BACKEND AND FRONTEND ARE NOT ON THE SAME TERMINAL USE DIFFERENT FOR FRONTEND 
+Important:
+The backend must run on port 8000 (http://localhost:8000).
+Running it on any other port will cause CORS issues and prevent the frontend from connecting.
+
+Frontend Setup (Terminal 2)
+Open a new and separate terminal window (do not close the backend terminal) and navigate to the frontend directory.
+
 cd frontend
-npm install 
-npm run dev 
-frontend will start running on http://localhost:5173
-MAKE SURE FRONTEND RUNS ON PORT 5173 AS IT IS CONFIGURED FOR 5173 ONLY , RUNNING ON OTHER PORT WILL BRING CORS ISSUE 
-
- COUNSELLOR DASHBOARD LOGIN CREDENTIALS 
- email:akashreddy0314@gmail.com
- password:dracarys 
-
-Usage Instructions
-Student Flow
--Register in the application using the student registration form.
--Log in with the registered credentials.
--Complete a self-check by answering the available screening questionnaires.
--Book a counselling appointment only for the current date.
--The counsellor dashboard will show a student’s profile only if the student has an appointment scheduled for that same day.
--Appointments booked for other dates will not be visible to the counsellor on that day.
--While booking, select the counsellor Akash, as the counsellor login credentials provided below correspond to this account.
--Explore the FAQ chatbot to understand application features and workflows.
--Watch wellness videos and read blogs available on the platform.
--Log out after completing your activities.
-
-Counsellor Dashboard Usage
-Login Instructions
--Open the counsellor dashboard.
--Log in using the following credentials:
--Email: akashreddy0314@gmail.com  
--Password: dracarys
--Counsellor Actions
--After logging in, open the appointment that was booked by the student for the current date.
--View the student’s profile and self-assessment summary.
--Add session notes after the appointment.
--These notes represent the student’s mental health progress across counselling sessions.
--Notes are stored securely and help maintain continuity of care.
-
-Important Notes
--A student profile is visible to the counsellor only on the day of the scheduled appointment.
--Each student can have only one active appointment at a time.
--Counsellor notes are accessible only to counsellors with an active appointment for that student.
+Install Dependencies and Run the Frontend
 
 
+npm install
+npm run dev
+Important:
+The frontend must run on port 5173 (http://localhost:5173).
+This port is hardcoded; using a different port will result in connection issues.
 
+Counsellor Access Credentials
+To test the counsellor dashboard features, use the following demo credentials:
+
+Role	Email	Password
+Counsellor (Akash)	akashreddy0314@gmail.com	dracarys
+
+Usage Guide
+Student Workflow
+To test the student features, follow these steps:
+
+Register and Login
+Create a new student account and log in.
+
+Self-Check
+Complete the screening questionnaire to assess mental well-being.
+
+Book an Appointment
+
+Navigate to the appointment booking section.
+
+Select Counsellor Akash (this ensures the appointment appears in the demo counsellor account).
+
+Select the current date only.
+
+Explore Resources
+Use the FAQ chatbot, watch wellness videos, and read blogs.
+
+Logout
+Log out to switch to the counsellor view.
+
+Counsellor Dashboard Workflow
+To test counsellor functionality:
+
+Login
+Use the counsellor credentials provided above.
+
+View Appointments
+
+Only appointments scheduled for the current date will appear.
+
+Click an appointment to view the student’s profile and self-assessment summary.
+
+Session Notes
+
+Add notes after the session to track the student’s progress.
+
+Notes are stored securely for continuity across future sessions.
+
+Important System Logic
+Please keep the following constraints in mind while testing:
+
+Same-Day Visibility
+A student’s full profile is visible to the counsellor only on the day of the scheduled appointment.
+Future appointments will not appear until their scheduled date.
+
+One Active Appointment
+Each student can have only one active appointment at a time.
+
+Data Access Control
+Counsellor notes are accessible only to the counsellor who has an active appointment with that student.
