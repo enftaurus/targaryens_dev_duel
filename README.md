@@ -143,7 +143,8 @@ This port is hardcoded; using a different port will result in connection issues.
 Counsellor Access Credentials
 To test the counsellor dashboard features, use the following demo credentials:
 
-Role	Email	Password
+Role	               Email	                   Password
+
 Counsellor (Akash)	akashreddy0314@gmail.com	dracarys
 
 Usage Guide
@@ -175,6 +176,8 @@ To test counsellor functionality:
 
 Login
 Use the counsellor credentials provided above.
+email akashreddy0314@gmail.com
+password dracarys
 
 View Appointments
 
